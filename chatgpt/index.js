@@ -26,7 +26,7 @@ async function chat(content) {
 }
 
 // Print the response of the API call
-console.log(await chat("Who was Luke Skywalker's father?"));
+console.log(await chat("I'm hungury"));
 console.log(await chat("How many students are currently enrolled at UCLA?"));
 
 /* EXAMPLE RESPONSE:
