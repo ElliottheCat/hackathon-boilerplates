@@ -1,33 +1,33 @@
 // JavaScript example of using the ChatGPT API for chat completion
 // See https://platform.openai.com/docs/api-reference/ for examples of other APIs you can use
 
-
-import dotenv from "dotenv"
+import dotenv from "dotenv";
 import OpenAI from "openai";
-
 
 // Configure the process environment variables, including your OpenAI API key
 dotenv.config({
-  path: "../.env"
-})
-
+  path: "../../.env",
+});
+console.log(process.env.OPENAI_API_KEY);
 // Configure the OpenAI client
-const openai = new OpenAI();
+const openai = new OpenAI({
+  apiKey: process.env.OPENAI_API_KEY,
+  dangerouslyAllowBrowser: true,
+});
 
 // Create a generic function that calls the OpenAI API for chat completion
-async function chat(content) {
+
+export async function chat(content) {
   const completion = await openai.chat.completions.create({
-    messages: [
-      { role: "user", content }
-    ],
-    model: "gpt-3.5-turbo"
+    messages: [{ role: "user", content }],
+    model: "gpt-3.5-turbo",
   });
   return completion.choices;
 }
 
 // Print the response of the API call
-console.log(await chat("I'm hungury"));
-console.log(await chat("How many students are currently enrolled at UCLA?"));
+// console.log(await chat("Who was Luke Skywalker's father?"));
+// console.log(await chat("How many students are currently enrolled at UCLA?"));
 
 /* EXAMPLE RESPONSE:
    [
