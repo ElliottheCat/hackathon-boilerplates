@@ -5,7 +5,6 @@ import Link from "next/link";
 import React, { useState } from "react";
 import { chat } from "./index.js";
 
-
 export default function Home() {
   const [thirstLevel, setThirstLevel] = useState(100);
   const [hungerLevel, setHungerLevel] = useState(100);
