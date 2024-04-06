@@ -1,10 +1,17 @@
-import Image from 'next/image'
-import Link from 'next/link';
-import '/Users/xiyuancao/Desktop/hackathon-boilerplates/nextjs-firebase-boilerplate/src/app/page.css';
+"use client"; // This is a client component 👈🏽
 
+import Image from "next/image";
+import Link from "next/link";
+import React, { useState } from "react";
+import { chat } from "./index.js";
 
 
 export default function Home() {
+  const [thirstLevel, setThirstLevel] = useState(100);
+  const [hungerLevel, setHungerLevel] = useState(100);
+  const [activityHour, setActivityHour] = useState(0);
+
+  // var x = chatBox("Hi!");
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
@@ -40,7 +47,7 @@ export default function Home() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            By{' '}
+            By{" "}
             <Image
               src="/vercel.svg"
               alt="Vercel Logo"
@@ -76,7 +83,7 @@ export default function Home() {
           rel="noopener noreferrer"
         >
           <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
+            Docs{" "}
             <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
               -&gt;
             </span>
@@ -93,7 +100,7 @@ export default function Home() {
           rel="noopener noreferrer"
         >
           <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
+            Learn{" "}
             <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
               -&gt;
             </span>
@@ -110,7 +117,7 @@ export default function Home() {
           rel="noopener noreferrer"
         >
           <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
+            Templates{" "}
             <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
               -&gt;
             </span>
@@ -127,7 +134,7 @@ export default function Home() {
           rel="noopener noreferrer"
         >
           <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
+            Deploy{" "}
             <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
               -&gt;
             </span>
@@ -138,5 +145,5 @@ export default function Home() {
         </a> */}
       {/* </div> */}
     </main>
-  )
+  );
 }
